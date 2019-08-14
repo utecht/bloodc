@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post '/join', to: 'lobby#join'
   get '/game', to: 'game#show', as: 'game'
   get '/player', to: 'game#player', as: 'player'
+  post '/lock', to: 'game#lock'
 end

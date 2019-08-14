@@ -1,19 +1,21 @@
-<% flash.each do |name, msg| -%>
+<% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: name %>
-<% end -%>
+<% end %>
 <h1>Blood on the Clock App</h1>
 
 <%= form_for @game, url: {action: "host"} do |f| %>
+  <%= f.label :name, 'Game Name' %>
   <%= f.text_field :name %>
-  <%= f.select(:edition, ['Trouble Brewing']) %>
+  <%= f.label :edition, 'Which edition' %>
+  <%= f.select :edition, ['Trouble Brewing'] %>
   <%= f.submit "Host Game" %>
 <% end %>
-<%= form_tag(controller: 'lobby', action: 'join', method: 'post') do %>
-  <%= label_tag(:name, "Your Name") %>
-  <%= text_field_tag(:name) %>
-  <%= label_tag(:game, "Game Name") %>
-  <%= text_field_tag(:game) %>
-  <%= label_tag(:demon, "Are you willing to be the demon?") %>
-  <%= check_box_tag(:demon) %>
-  <%= submit_tag("Join Game") %>
+<%= form_tag controller: 'lobby', action: 'join', method: 'post' do %>
+  <%= label_tag :name, "Your Name" %>
+  <%= text_field_tag :name %>
+  <%= label_tag :game, "Game Name" %>
+  <%= text_field_tag :game %>
+  <%= label_tag :demon, "Are you willing to be the demon?" %>
+  <%= check_box_tag :demon %>
+  <%= submit_tag "Join Game" %>
 <% end %>
