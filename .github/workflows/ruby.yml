@@ -15,7 +15,7 @@ jobs:
         version: 2.6.x
     - name: Install sqlite dev
       run: |
-        apt-get install libsqlite3-dev
+        sudo apt-get install libsqlite3-dev
     - name: Build and test with Rake
       run: |
         gem install bundler
