@@ -18,6 +18,16 @@ class LobbyControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "cookie is set upon joining as a player" do
+    post '/join', params: { name: "Carol", game: games(:game_one).name}
+    assert cookies[:player_id]
+  end
+
+  test "cookie is set upon hosting game" do
+    post '/host', params: { game: { name: 'test', edition: 'trouble'} }
+    assert cookies[:game_id]
+  end
+
   test "can't join non-existant games" do
     post '/join', params: { name: "Carol", game: 'bad name' }
     assert_response :redirect

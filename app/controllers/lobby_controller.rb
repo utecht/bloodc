@@ -8,6 +8,8 @@ class LobbyController < ApplicationController
     @game.phase = 'joining'
     @game.save
     session[:game_id] = @game.id
+    cookies.encrypted[:game_id] = @game.id
+    cookies.encrypted[:player_id] = nil
     redirect_to @game
   end
 
@@ -20,6 +22,8 @@ class LobbyController < ApplicationController
     @player = Player.new(name: params[:name], game: @game, willing_demon: demon)
     @player.save!
     session[:player_id] = @player.id
+    cookies.encrypted[:game_id] = nil
+    cookies.encrypted[:player_id] = @player.id
     redirect_to @player
   end
 
