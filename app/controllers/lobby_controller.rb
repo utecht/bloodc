@@ -7,15 +7,20 @@ class LobbyController < ApplicationController
     @game = Game.new(game_params)
     @game.phase = 'joining'
     @game.save
+    session[:game_id] = @game.id
     redirect_to @game
   end
 
   def join
     @game = Game.find_by(name: params[:game])
-    @player = Player.new(name: params[:name], game: @game)
+    if @game.nil?
+      return redirect_to '/', alert: "That game does not exist."
+    end
+    demon = if params.has_key?(:demon) then true else false end
+    @player = Player.new(name: params[:name], game: @game, willing_demon: demon)
     @player.save!
     session[:player_id] = @player.id
-    redirect_to '/player'
+    redirect_to @player
   end
 
   private

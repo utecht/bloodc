@@ -15,4 +15,13 @@ class LobbyFlowTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "h1", "Waiting for players"
   end
+
+  test "can join an existing game" do
+    post "/join",
+      params: { name: "Joe", game: games(:game_one).name }
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+    assert_select "h1", "Waiting on role"
+  end
 end

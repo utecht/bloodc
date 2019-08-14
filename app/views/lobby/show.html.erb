@@ -1,3 +1,6 @@
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
 <h1>Blood on the Clock App</h1>
 
 <%= form_for @game, url: {action: "host"} do |f| %>
@@ -10,5 +13,7 @@
   <%= text_field_tag(:name) %>
   <%= label_tag(:game, "Game Name") %>
   <%= text_field_tag(:game) %>
+  <%= label_tag(:demon, "Are you willing to be the demon?") %>
+  <%= check_box_tag(:demon) %>
   <%= submit_tag("Join Game") %>
 <% end %>

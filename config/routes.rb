@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get '/', to: 'lobby#show'
   post '/host', to: 'lobby#host'
   post '/join', to: 'lobby#join'
-  get '/game/:id', to: 'game#show', as: 'game'
-  get '/player', to: 'game#player'
+  get '/game', to: 'game#show', as: 'game'
+  get '/player', to: 'game#player', as: 'player'
 end

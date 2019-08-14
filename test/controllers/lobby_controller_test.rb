@@ -18,6 +18,14 @@ class LobbyControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "can't join non-existant games" do
+    post '/join', params: { name: "Carol", game: 'bad name' }
+    assert_response :redirect
+    assert_includes flash[:alert], 'game'
+    assert_includes flash[:alert], 'not'
+    assert_includes flash[:alert], 'exist'
+  end
+
   test "correct editions are in hosting form" do
     get "/"
     assert_select "option", "Trouble Brewing"

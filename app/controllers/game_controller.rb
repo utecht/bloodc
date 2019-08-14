@@ -1,6 +1,6 @@
 class GameController < ApplicationController
   def show
-    @game = Game.find(params[:id])
+    @game = Game.find(session[:game_id])
   end
 
   def player
