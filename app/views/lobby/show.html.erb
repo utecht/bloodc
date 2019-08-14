@@ -1,4 +1,14 @@
 <h1>Blood on the Clock App</h1>
 
-<button type="button" name="host">Host Game</button>
-<button type="button" name="join">Join Game</button>
+<%= form_for @game, url: {action: "host"} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.select(:edition, ['Trouble Brewing']) %>
+  <%= f.submit "Host Game" %>
+<% end %>
+<%= form_tag(controller: 'lobby', action: 'join', method: 'post') do %>
+  <%= label_tag(:name, "Your Name") %>
+  <%= text_field_tag(:name) %>
+  <%= label_tag(:game, "Game Name") %>
+  <%= text_field_tag(:game) %>
+  <%= submit_tag("Join Game") %>
+<% end %>

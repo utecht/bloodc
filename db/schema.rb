@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_08_14_015846) do
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.boolean "willing_demon"
-    t.integer "role_id", null: false
+    t.integer "role_id"
     t.integer "game_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
