@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+game_one:
+  name: Test Game
+  edition: trouble_brewing
+  phase: joining
+
+game_two:
+  name: Dead game
+  edition: trouble_brewing
+  phase: ended

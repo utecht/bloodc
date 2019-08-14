@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+soldier:
+  name: Soldier
+  description: "You are safe from the Demon"
+  edition: trouble_brewing
+  faction: townsfolk
+  first_day: false
+  night: false
+
+imp:
+  name: Imp
+  description: "Each night, choose a player: they die. If you kill yourself this way, a Minion becomes the Imp."
+  edition: trouble_brewing
+  faction: demons
+  first_day: false
+  night: true

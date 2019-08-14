@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+alice:
+  name: Alice
+  willing_demon: true
+  role: imp
+  game: game_one
+
+bob:
+  name: Bob
+  willing_demon: false
+  role: soldier
+  game: game_one
