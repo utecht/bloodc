@@ -3,7 +3,7 @@
 soldier:
   name: Soldier
   description: "You are safe from the Demon"
-  edition: trouble_brewing
+  edition: trouble
   faction: townsfolk
   first_day: false
   night: false
@@ -11,7 +11,7 @@ soldier:
 imp:
   name: Imp
   description: "Each night, choose a player: they die. If you kill yourself this way, a Minion becomes the Imp."
-  edition: trouble_brewing
+  edition: trouble
   faction: demons
   first_day: false
   night: true

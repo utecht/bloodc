@@ -8,7 +8,7 @@ class LobbyControllerTest < ActionDispatch::IntegrationTest
 
   test "can host a new game" do
     assert_difference('Game.count', 1) do
-      post '/host', params: { game: { name: 'test', edition: 'Trouble Brewing'} }
+      post '/host', params: { game: { name: 'test', edition: 'trouble'} }
     end
   end
 
