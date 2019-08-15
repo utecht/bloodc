@@ -1,0 +1,583 @@
+washerwoman:
+  name: Washerwoman
+  description: "You start knowing 1 of 2 players is a particular Townsfolk."
+  edition: trouble
+  faction: townsfolk
+  first_day: true
+  night: false
+
+librarian:
+  name: Librarian
+  description: "You start knowing 1 of 2 players is a particular Outsider."
+  edition: trouble
+  faction: townsfolk
+  first_day: true
+  night: false
+
+investigator:
+  name: Investigator
+  description: "You start knowing 1 of 2 players is a particular Minion."
+  edition: trouble
+  faction: townsfolk
+  first_day: true
+  night: false
+
+chef:
+  name: Chef
+  description: "You start knowing how many pairs of evil players are neighbouring each other."
+  edition: trouble
+  faction: townsfolk
+  first_day: true
+  night: false
+
+empath:
+  name: Empath
+  description: "Each night, you learn how many of your 2 alive neighbours are evil."
+  edition: trouble
+  faction: townsfolk
+  first_day: true
+  night: true
+
+fortuneteller:
+  name: Fortune Teller
+  description: "Each night, choose 2 players: you learn if either is a Demon. There is 1 good player that registers falsely to you."
+  edition: trouble
+  faction: townsfolk
+  first_day: true
+  night: true
+
+undertaker:
+  name: Undertaker
+  description: "Each night, you learn which character died by execution today."
+  edition: trouble
+  faction: townsfolk
+  first_day: false
+  night: true
+
+monk:
+  name: Monk
+  description: "Each night*, choose a player (not yourself): they are safe from the Demon tonight."
+  edition: trouble
+  faction: townsfolk
+  first_day: false
+  night: true
+
+ravenkeeper:
+  name: Ravenkeeper
+  description: "If you die at night, you are woken to choose a player: you learn their character."
+  edition: trouble
+  faction: townsfolk
+  first_day: false
+  night: true
+
+virgin:
+  name: Virgin
+  description: "The 1st time you are nominated, if the nominator is a Townsfolk, they are executed immediately."
+  edition: trouble
+  faction: townsfolk
+  first_day: false
+  night: false
+
+slayer:
+  name: Slayer
+  description: "Once per game, during the day, publicly choose a player: if they are the Demon, they die."
+  edition: trouble
+  faction: townsfolk
+  first_day: false
+  night: false
+
+soldier:
+  name: Soldier
+  description: "You are safe from the Demon."
+  edition: trouble
+  faction: townsfolk
+  first_day: false
+  night: false
+
+mayor:
+  name: Mayor
+  description: "If no execution occurs while only 3 players live, you win. If you die at night, another player might die instead."
+  edition: trouble
+  faction: townsfolk
+  first_day: false
+  night: false
+
+butler:
+  name: Butler
+  description: "Each night, choose a player (not yourself): tomorrow, you may only vote when they are, even if drunk or poisoned."
+  edition: trouble
+  faction: outsider
+  first_day: true
+  night: true
+
+butler:
+  name: Butler
+  description: "Each night, choose a player (not yourself): tomorrow, you may only vote when they are, even if drunk or poisoned."
+  edition: trouble
+  faction: outsider
+  first_day: true
+  night: true
+
+drunk:
+  name: Drunk
+  description: "You do not know you are the Drunk. You think you are a Townsfolk, but your ability malfunctions."
+  edition: trouble
+  faction: outsider
+  first_day: false
+  night: false
+
+recluse:
+  name: Recluse
+  description: "You might register as evil & as a Minion or Demon, even if dead."
+  edition: trouble
+  faction: outsider
+  first_day: false
+  night: false
+
+saint:
+  name: Saint
+  description: "If you die by execution, you lose."
+  edition: trouble
+  faction: outsider
+  first_day: false
+  night: false
+
+poisoner:
+  name: Poisoner
+  description: "Each night, choose a player: their ability malfunctions tonight and tomorrow day."
+  edition: trouble
+  faction: minion
+  first_day: true
+  night: true
+
+spy:
+  name: Spy
+  description: "Each night, you see the Grimoire. You might register as good & as a Townsfolk or Outsider, even if dead."
+  edition: trouble
+  faction: minion
+  first_day: true
+  night: true
+
+scarletwoman:
+  name: Scarlet Woman
+  description: "If there are 5 or more players alive & the Demon dies, you become the Demon. (Travellers do not count)"
+  edition: trouble
+  faction: minion
+  first_day: false
+  night: true
+
+baron:
+  name: Baron
+  description: "There are extra Outsiders in play. [+2 Outsiders]"
+  edition: trouble
+  faction: minion
+  first_day: false
+  night: false
+
+imp:
+  name: Imp
+  description: "Each night, choose a player: they die. If you kill yourself this way, a Minion becomes the Imp."
+  edition: trouble
+  faction: demons
+  first_day: false
+  night: true
+
+clockmaker:
+  name: Clockmaker
+  description: "You start knowing how many steps from the Demon to it's nearest Minion."
+  edition: sects
+  faction: townsfolk
+  first_day: true
+  night: false
+
+dreamer:
+  name: Dreamer
+  description: "Each night, choose a player (not yourself); you learn 1 good character and 1 evil character, 1 of which is correct."
+  edition: sects
+  faction: townsfolk
+  first_day: true
+  night: true
+
+snakecharmer:
+  name: Snake Charmer
+  description: "Each night, choose an alive player: a chosen Demon swaps characters & alignments with you & is then poisoned."
+  edition: sects
+  faction: townsfolk
+  first_day: true
+  night: true
+
+mathematician:
+  name: Mathematician
+  description: "Each night, you learn how many other player's abilities malfunctioned today/tonight."
+  edition: sects
+  faction: townsfolk
+  first_day: true
+  night: true
+
+flowergirl:
+  name: Flowergirl
+  description: "Each night*, you learn if the Demon voted today."
+  edition: sects
+  faction: townsfolk
+  first_day: false
+  night: true
+
+towncrier:
+  name: Town Crier
+  description: "Each night*, you learn if a Minion nominated that day."
+  edition: sects
+  faction: townsfolk
+  first_day: false
+  night: true
+
+oracle:
+  name: Oracle
+  description: "Each night*, you learn how many dead players are evil."
+  edition: sects
+  faction: townsfolk
+  first_day: false
+  night: true
+
+savant:
+  name: Savant
+  description: "Each day, visit the Storyteller to learn 2 things in private: 1 is true & 1 is false."
+  edition: sects
+  faction: townsfolk
+  first_day: false
+  night: false
+
+seamstress:
+  name: Seamstress
+  description: "Once per game, at night, choose 2 players (not yourself): you learn if they are the same alignment."
+  edition: sects
+  faction: townsfolk
+  first_day: true
+  night: true
+
+philosopher:
+  name: Philosopher
+  description: "Once per game, at night, choose a good character: become them. If you duplicate an in-play character, they are drunk."
+  edition: sects
+  faction: townsfolk
+  first_day: true
+  night: true
+
+artist:
+  name: Artist
+  description: "Once per game, during the day, privately ask the Storyteller any yes/no question."
+  edition: sects
+  faction: townsfolk
+  first_day: false
+  night: false
+
+juggler:
+  name: Juggler
+  description: "On your 1st day, publicly guess up to 5 player's characters. That night, you learn how many you got correct."
+  edition: sects
+  faction: townsfolk
+  first_day: false
+  night: true
+
+sage:
+  name: Sage
+  description: "If the Demon kills you, you learn that it is 1 of 2 players."
+  edition: sects
+  faction: townsfolk
+  first_day: false
+  night: true
+
+mutant:
+  name: Mutant
+  description: 'If you are "mad" about being an Outsider, you might be executed.'
+  edition: sects
+  faction: outsider
+  first_day: false
+  night: false
+
+sweetheart:
+  name: Sweetheart
+  description: "If you die, 1 player is drunk from now on."
+  edition: sects
+  faction: outsider
+  first_day: false
+  night: true
+
+barber:
+  name: Barber
+  description: "If you die, the Demon may choose 2 players to swap characters tonight."
+  edition: sects
+  faction: outsider
+  first_day: false
+  night: true
+
+klutz:
+  name: Klutz
+  description: "When you learn that you are dead, publicly choose an alive player: if they are evil, you lose."
+  edition: sects
+  faction: outsider
+  first_day: false
+  night: true
+
+eviltwin:
+  name: Evil Twin
+  description: "You & an opposing player know each other. If the good player is executed, evil wins. Good can't win if you both live."
+  edition: sects
+  faction: minion
+  first_day: true
+  night: false
+
+witch:
+  name: Witch
+  description: "Each night, choose a player: if they nominate tomorrow, they die. If just 3 players live, you lose this ability."
+  edition: sects
+  faction: minion
+  first_day: true
+  night: true
+
+cerenovus:
+  name: Cerenovus
+  description: 'Each night, choose a player & a good character: they are "mad" they are this character tomorrow, or might be executed.'
+  edition: sects
+  faction: minion
+  first_day: true
+  night: true
+
+pithag:
+  name: Pit Hag
+  description: "Each night, choose a player & a character they become (if not-in-play). If a Demon is made, deaths tonight are arbitrary."
+  edition: sects
+  faction: minion
+  first_day: false
+  night: true
+
+fanggu:
+  name: Fang Gu
+  description: "Each night, choose a player: they die.Chosen Outsiders kill you, turn evil, then swap characters with you. [+1 Outsider]"
+  edition: sects
+  faction: demons
+  first_day: false
+  night: true
+
+vigormortis:
+  name: Vigormortis
+  description: "Each night, choose a player: they die. Minions you kill keep their ability."
+  edition: sects
+  faction: demons
+  first_day: false
+  night: true
+
+nodashii:
+  name: No Dashii
+  description: "Each night, choose a player: they die. You start with both closest neighboring Townsfolk poisoned."
+  edition: sects
+  faction: demons
+  first_day: false
+  night: true
+
+vortox:
+  name: Vortox
+  description: "Each night*, choose a player; they die. Good abilities yield false information. Each day, if no-one was executed, evil wins."
+  edition: sects
+  faction: demons
+  first_day: false
+  night: true
+
+grandmother:
+  name: Grandmother
+  description: "You start knowing a good player & character. If the Demon kills them, you die too."
+  edition: moon
+  faction: townsfolk
+  first_day: true
+  night: true
+
+sailor:
+  name: Sailor
+  description: "Each night, choose a living player: either you or they are drunk until dusk. You can not die."
+  edition: moon
+  faction: townsfolk
+  first_day: true
+  night: true
+
+chambermaid:
+  name: Chambermaid
+  description: "Each night, choose 2 alive players (not yourself): you learn how many wake tonight due to their character ability."
+  edition: moon
+  faction: townsfolk
+  first_day: true
+  night: true
+
+exorcist:
+  name: Exorcist
+  description: "Each night*, choose a player: the Demon, if chosen, learns who you are and does not attack tonight."
+  edition: moon
+  faction: townsfolk
+  first_day: false
+  night: true
+
+innkeeper:
+  name: Innkeeper
+  description: "Each night*, choose 2 players: they cannot die tonight, but 1 is drunk until dusk."
+  edition: moon
+  faction: townsfolk
+  first_day: false
+  night: true
+
+gambler:
+  name: Gambler
+  description: "Each night*, choose a player & guess their character: if you guess wrong, you die."
+  edition: moon
+  faction: townsfolk
+  first_day: false
+  night: true
+
+gossip:
+  name: Gossip
+  description: "Each day, publicly make a statement of your choice. If it was true, a player dies tonight."
+  edition: moon
+  faction: townsfolk
+  first_day: false
+  night: true
+
+courtier:
+  name: Courtier
+  description: "Once per game, at night, choose a character: they are poisoned for 3 days and 3 nights."
+  edition: moon
+  faction: townsfolk
+  first_day: true
+  night: true
+
+professor:
+  name: Professor
+  description: "Once per game, at night, choose a dead player: if they are a Townsfolk, they are resurrected."
+  edition: moon
+  faction: townsfolk
+  first_day: false
+  night: true
+
+minstrel:
+  name: Minstrel
+  description: "If a Minion died today, all players (except Travellers) are drunk that night until dusk."
+  edition: moon
+  faction: townsfolk
+  first_day: false
+  night: false
+
+tealady:
+  name: Tea Lady
+  description: "If both your alive neighbors are good, they can not die."
+  edition: moon
+  faction: townsfolk
+  first_day: false
+  night: false
+
+pacifist:
+  name: Pacifist
+  description: "Executed good players might not die."
+  edition: moon
+  faction: townsfolk
+  first_day: false
+  night: false
+
+fool:
+  name: Fool
+  description: "The first time you die, you do not."
+  edition: moon
+  faction: townsfolk
+  first_day: false
+  night: false
+
+tinker:
+  name: Tinker
+  description: "You might die at any time."
+  edition: moon
+  faction: outsider
+  first_day: false
+  night: false
+
+moonchild:
+  name: Moonchild
+  description: "When you learn you are dead, choose 1 alive player: if good, they die tonight."
+  edition: moon
+  faction: outsider
+  first_day: false
+  night: false
+
+goon:
+  name: Goon
+  description: "If a player ability affects you specifically, it malfunctions instead & you become their alignment at dawn."
+  edition: moon
+  faction: outsider
+  first_day: true
+  night: true
+
+lunatic:
+  name: Lunatic
+  description: "You think you are a Demon, but your abilities malfunction. The Demon knows who you are & who you attack."
+  edition: moon
+  faction: outsider
+  first_day: true
+  night: true
+
+godfather:
+  name: Godfather
+  description: "You start knowing which Outsiders are in play. If 1 was executed today, a player dies tonight. [-1 or +1 Outsider]"
+  edition: moon
+  faction: minion
+  first_day: true
+  night: true
+
+devilsadvocate:
+  name: Devils Advocate
+  description: 'Each night, choose a player (not the same as last night and not a "dead" Zombuul): if executed tomorrow, they do not die.'
+  edition: moon
+  faction: minion
+  first_day: true
+  night: true
+
+assassin:
+  name: Assassin
+  description: "Once per game, at night, choose a player: they die, even if for some reason they could not."
+  edition: moon
+  faction: minion
+  first_day: false
+  night: true
+
+mastermind:
+  name: Mastermind
+  description: "If the Demon dies by execution, play for 1 more day. If a player is then executed, they lose."
+  edition: moon
+  faction: minion
+  first_day: false
+  night: false
+
+zombuul:
+  name: Zombuul
+  description: "Each night*, if no-one died today, choose a player: they die. The 1st time you die, you do not, but appear to."
+  edition: moon
+  faction: demons
+  first_day: false
+  night: true
+
+pukka:
+  name: Pukka
+  description: "Each night, choose a player: they are poisoned until tomorrow night, then die. You act on the first night."
+  edition: moon
+  faction: demons
+  first_day: true
+  night: true
+
+shabaloth:
+  name: Shabaloth
+  description: "Each night*, choose two players: they die. 1 might be regurgitated tomorrow night (even if dead when chosen)."
+  edition: moon
+  faction: demons
+  first_day: false
+  night: true
+
+Po:
+  name: Po
+  description: "Each night, choose a player: they die. Or, choose no-one tonight & 3 players tomorrow night."
+  edition: moon
+  faction: demons
+  first_day: false
+  night: true

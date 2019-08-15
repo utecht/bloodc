@@ -6,7 +6,9 @@ class LobbyController < ApplicationController
   def host
     @game = Game.new(game_params)
     @game.phase = 'joining'
-    @game.save
+    unless @game.save
+      return redirect_to '/', alert: "Game not created."
+    end
     session[:game_id] = @game.id
     cookies.encrypted[:game_id] = @game.id
     cookies.encrypted[:player_id] = nil

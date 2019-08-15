@@ -1,0 +1,12 @@
+<div id="player_assign_form_<%= player.id %>">
+<%= form_with model: player, url: assign_path(player.id) do |f| %>
+  <%= f.label :name, player.name %>
+  <% if player.role %>
+  <%= f.label :role_name, player.role.name %>
+  <% else %>
+  <%= f.label :role_name, "[Needs Role]" %>
+  <% end %>
+  <%= f.collection_select :role, roles, :id, :name %>
+  <%= f.submit "Save" %>
+<% end %>
+</div>

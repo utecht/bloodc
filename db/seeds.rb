@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+role_file = Rails.root.join('db', 'roles.yml')
+roles = YAML::load_file(role_file)
+roles.each do |name, values|
+  Role.create!(values)
+end

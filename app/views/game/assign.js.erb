@@ -1,0 +1,3 @@
+document.getElementById("player_assign_form_<%= @player.id %>")
+  .innerHTML = "<%= j (render :partial => 'game/assign',
+                       :locals => {player: @player, roles: @roles}) %>";

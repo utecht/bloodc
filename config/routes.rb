@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get '/game', to: 'game#show', as: 'game'
   get '/player', to: 'game#player', as: 'player'
   post '/lock', to: 'game#lock'
+  post '/start', to: 'game#start'
+  patch '/assign/:id', to: 'game#assign', as: 'assign'
+  patch '/update/:id', to: 'game#update', as: 'update'
 end

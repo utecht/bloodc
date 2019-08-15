@@ -1,6 +1,3 @@
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, class: name %>
-<% end %>
 <h1>Blood on the Clock App</h1>
 
 <%= form_for @game, url: {action: "host"} do |f| %>
