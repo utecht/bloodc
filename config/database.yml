@@ -21,9 +21,4 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: bloodc
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: bloodc
-  password: <%= ENV['BLOODC_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
