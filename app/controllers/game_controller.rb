@@ -9,6 +9,16 @@ class GameController < ApplicationController
     @roles = Role.where(edition: @game.edition)
   end
 
+  def all_roles
+    if cookies.encrypted[:game_id].nil?
+      return redirect_to '/', alert: "Wrong place"
+    end
+    unless @game = Game.find(cookies.encrypted[:game_id])
+      return redirect_to '/', alert: "Something broke"
+    end
+    @roles = Role.where(edition: @game.edition)
+  end
+
   def player
     if cookies.encrypted[:player_id].nil?
       return redirect_to '/', alert: "No game found"

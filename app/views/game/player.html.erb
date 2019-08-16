@@ -13,7 +13,7 @@ Press to show role
   <%= @player.role.name %>
   <%= @player.role.faction %>
   <%= @player.role.description %>
-  <%= image_tag @player.role.image %>
+  <%= image_tag @player.role.image, size: '300' %>
 </div>
 <% end %>
 <%= render 'game/roles', roles: @roles %>

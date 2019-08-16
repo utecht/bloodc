@@ -41,8 +41,11 @@
   <h3>Night</h3>
   <%= render 'game/playerlist',
     players: @game.players.select { |player| player.role.night } %>
-    
+
   <h3>First Night</h3>
   <%= render 'game/playerlist',
     players: @game.players.select { |player| player.role.first_day } %>
+
+  <%= link_to 'All Roles', :all_roles, {target: '_'} %>
+  <%= render 'game/roles', roles: @roles %>
 <% end %>

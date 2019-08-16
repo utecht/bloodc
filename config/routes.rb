@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post '/start', to: 'game#start'
   patch '/assign/:id', to: 'game#assign', as: 'assign'
   patch '/update/:id', to: 'game#update', as: 'update'
+  get '/roles', to: 'game#all_roles', as: 'all_roles'
 end

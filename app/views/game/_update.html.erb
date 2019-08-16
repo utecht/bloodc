@@ -1,7 +1,7 @@
 <tr id="player_update_row_<%= player.id %>">
 <%= form_with model: player, url: update_path(player.id) do |f| %>
   <td><%= f.label :name, player.name %></td>
-  <td><%= f.label :role_name, player.role.name %></td>
+  <td><%= link_to player.role.name, player.role.wiki_link, {target: '_'} %></td>
   <td><%= f.check_box :dead %></td>
   <td><%= f.check_box :poisoned %></td>
   <td><%= f.check_box :drunk %></td>
