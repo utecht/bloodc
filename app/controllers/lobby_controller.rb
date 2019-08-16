@@ -9,7 +9,6 @@ class LobbyController < ApplicationController
     unless @game.save
       return redirect_to '/', alert: "Game not created."
     end
-    session[:game_id] = @game.id
     cookies.encrypted[:game_id] = @game.id
     cookies.encrypted[:player_id] = nil
     redirect_to @game
@@ -23,7 +22,6 @@ class LobbyController < ApplicationController
     demon = if params.has_key?(:demon) then true else false end
     @player = Player.new(name: params[:name], game: @game, willing_demon: demon)
     @player.save!
-    session[:player_id] = @player.id
     cookies.encrypted[:game_id] = nil
     cookies.encrypted[:player_id] = @player.id
     redirect_to @player

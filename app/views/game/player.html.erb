@@ -1,24 +1,19 @@
 <% if @game.phase == 'joining' %>
+<h1>Waiting on players</h1>
+<% elsif @game.phase == 'assignment' %>
 <h1>Waiting on role</h1>
 <% end %>
-<h2><%= @game.edition %></h2>
+<h2><%= @game.full_edition %></h2>
 <% if @game.phase == 'active' %>
-<%= @player.role.name %>
-<%= @player.role.faction %>
-<%= @player.role.description %>
-<%= image_tag @player.role.image %>
+<button onmousedown="document.getElementById('player_role').style.display = 'inline'"
+        onmouseup="document.getElementById('player_role').style.display = 'none'">
+Press to show role
+</button>
+<div id="player_role" style="display:none">
+  <%= @player.role.name %>
+  <%= @player.role.faction %>
+  <%= @player.role.description %>
+  <%= image_tag @player.role.image %>
+</div>
 <% end %>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Faction</th>
-    <th>Ability</th>
-  </tr>
-  <% @roles.each do |role| %>
-  <tr>
-    <td><%= role.name %></td>
-    <td><%= role.faction %></td>
-    <td><%= role.description %></td>
-  </tr>
-  <% end %>
-</table>
+<%= render 'game/roles', roles: @roles %>

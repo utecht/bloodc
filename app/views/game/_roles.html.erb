@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Faction</th>
+    <th>Ability</th>
+  </tr>
+  <% roles.each do |role| %>
+  <tr>
+    <td><%= role.name %></td>
+    <td><%= role.faction %></td>
+    <td><%= role.description %></td>
+  </tr>
+  <% end %>
+</table>

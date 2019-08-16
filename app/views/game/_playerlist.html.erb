@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Done</th>
+    <th>Name</th>
+    <th>Role</th>
+    <th>Ability</th>
+  </tr>
+  <% players.each do |player| %>
+  <tr>
+    <td><input type="checkbox" name="night_checkbox"></td>
+    <td><%= player.name %></td>
+    <td><%= player.role.name %></td>
+    <td><%= player.role.description %></td>
+  </tr>
+  <% end %>
+</table>
+<button onclick="uncheck('night_checkbox');">Clear</button>
+<%= javascript_tag do %>
+  function uncheck(name){
+    checkboxes = document.getElementsByName(name);
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+      checkboxes[i].checked = false;
+    }
+  }
+<% end %>

@@ -22,6 +22,6 @@ class LobbyFlowTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
-    assert_select "h1", "Waiting on role"
+    assert_select "h1", "Waiting on players"
   end
 end

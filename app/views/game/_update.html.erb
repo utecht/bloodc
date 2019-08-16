@@ -1,6 +1,15 @@
+<tr id="player_update_row_<%= player.id %>">
 <%= form_with model: player, url: update_path(player.id) do |f| %>
-  <%= f.label :name, player.name %>
-  <%= f.label :role_name, player.role.name %>
-  <%= f.collection_select :role, roles, :id, :name %>
-  <%= f.submit "Update" %>
+  <td><%= f.label :name, player.name %></td>
+  <td><%= f.label :role_name, player.role.name %></td>
+  <td><%= f.check_box :dead %></td>
+  <td><%= f.check_box :poisoned %></td>
+  <td><%= f.check_box :drunk %></td>
+  <td><%= f.check_box :misc1 %></td>
+  <td><%= f.check_box :misc2 %></td>
+  <td><%= f.collection_select :role_id, roles, :id, :name, {:selected => player.role.id }%></td>
+  <td><%= f.text_area :notes %></td>
+  <td><%= f.submit "Update" %></td>
+  <td><%= player.role.description %></td>
 <% end %>
+</tr>

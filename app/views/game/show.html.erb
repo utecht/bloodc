@@ -1,6 +1,6 @@
 <% if @game.phase == 'joining' %>
   <h1>Waiting for players</h1>
-  <h2>Room name <%= @game.name %></h2>
+  <h2>Room name: [<%= @game.name %>]</h2>
   <p><%= @game.players.count %> have joined.</p>
   <ol>
     <% @game.players.each do |player| %>
@@ -16,11 +16,33 @@
   <%= render 'game/assign', player: player, roles: @roles %>
   <% end %>
   <%= button_to "Start Game", :start %>
+  <%= render 'game/roles', roles: @roles %>
 <% end %>
 
 <% if @game.phase == 'active' %>
   <h1>Game is active</h1>
+  <table>
+  <tr>
+    <th>Name</th>
+    <th>Role</th>
+    <th>Dead</th>
+    <th>Poisoned</th>
+    <th>Drunk</th>
+    <th>Misc1</th>
+    <th>Misc2</th>
+    <th>Change Role</th>
+    <th>Notes</th>
+  </tr>
   <% @game.players.each do |player| %>
   <%= render 'game/update', player: player, roles: @roles %>
   <% end %>
+  </table>
+
+  <h3>Night</h3>
+  <%= render 'game/playerlist',
+    players: @game.players.select { |player| player.role.night } %>
+    
+  <h3>First Night</h3>
+  <%= render 'game/playerlist',
+    players: @game.players.select { |player| player.role.first_day } %>
 <% end %>

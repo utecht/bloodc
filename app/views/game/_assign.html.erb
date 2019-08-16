@@ -6,7 +6,7 @@
   <% else %>
   <%= f.label :role_name, "[Needs Role]" %>
   <% end %>
-  <%= f.collection_select :role, roles, :id, :name %>
+  <%= f.collection_select :role_id, roles, :id, :name, {:selected => if player.role.nil? then nil else player.role.id end, :include_blank => true }%>
   <%= f.submit "Save" %>
 <% end %>
 </div>

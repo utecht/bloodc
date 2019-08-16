@@ -1,0 +1,3 @@
+document.getElementById("player_update_row_<%= @player.id %>")
+  .innerHTML = "<%= j (render :partial => 'game/update',
+                       :locals => {player: @player, roles: @roles}) %>";

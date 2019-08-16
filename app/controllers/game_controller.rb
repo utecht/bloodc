@@ -1,24 +1,37 @@
 class GameController < ApplicationController
   def show
-    @game = Game.find(session[:game_id])
+    if cookies.encrypted[:game_id].nil?
+      return redirect_to '/player'
+    end
+    unless @game = Game.find(cookies.encrypted[:game_id])
+      return redirect_to '/', alert: "Your game not found"
+    end
     @roles = Role.where(edition: @game.edition)
   end
 
   def player
-    @player = Player.find(session[:player_id])
+    if cookies.encrypted[:player_id].nil?
+      return redirect_to '/', alert: "No game found"
+    end
+    @player = Player.find(cookies.encrypted[:player_id])
     @game = @player.game
     @roles = Role.where(edition: @game.edition)
   end
 
   def lock
-    @game = Game.find(session[:game_id])
+    @game = Game.find(cookies.encrypted[:game_id])
     @game.phase = 'assignment'
     @game.save
     redirect_to @game
   end
 
   def start
-    @game = Game.find(session[:game_id])
+    @game = Game.find(cookies.encrypted[:game_id])
+    @game.players.each do |player|
+      if player.role.nil?
+        return redirect_to @game, alert: "All players need a role."
+      end
+    end
     @game.phase = 'active'
     @game.save
     redirect_to @game
@@ -26,8 +39,7 @@ class GameController < ApplicationController
 
   def assign
     @player = Player.find(params[:id])
-    role = Role.find(params[:player][:role])
-    @player.role = role
+    @player.update(assign_player)
     respond_to do |format|
       if @player.save
         @roles = Role.where(edition: @player.game.edition)
@@ -39,9 +51,24 @@ class GameController < ApplicationController
   end
 
   def update
-    player = Player.find(params[:id])
-    role = Role.find(params[:player][:role])
-    player.role = role
-    player.save
+    @player = Player.find(params[:id])
+    @player.update(update_player)
+    respond_to do |format|
+      if @player.save
+        @roles = Role.where(edition: @player.game.edition)
+        format.js
+      else
+        return redirect_to '/game', alert: "Player update failed."
+      end
+    end
   end
+
+  private
+  def assign_player
+    params.require(:player).permit(:role_id)
+  end
+  def update_player
+    params.require(:player).permit(:role_id, :drunk, :dead, :poisoned, :misc1, :misc2, :notes)
+  end
+
 end
