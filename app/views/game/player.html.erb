@@ -8,7 +8,9 @@
 <h2><%= @game.full_edition %></h2>
 <% if @game.phase == 'active' %>
 <button onmousedown="document.getElementById('player_role').style.display = 'inline'"
-        onmouseup="document.getElementById('player_role').style.display = 'none'">
+        onmouseup="document.getElementById('player_role').style.display = 'none'"
+        ontouchstart="document.getElementById('player_role').style.display = 'inline'"
+        ontouchend="document.getElementById('player_role').style.display = 'none'">
 Press to show role
 </button>
 <div id="player_role" style="display:none">
