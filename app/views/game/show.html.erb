@@ -17,6 +17,7 @@
   <% end %>
   <%= button_to "Start Game", :start %>
   <%= render 'game/roles', roles: @roles %>
+  <%= image_tag 'player_count' %>
 <% end %>
 
 <% if @game.phase == 'active' %>
