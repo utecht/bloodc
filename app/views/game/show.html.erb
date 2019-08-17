@@ -11,7 +11,7 @@
 <% end %>
 
 <% if @game.phase == 'assignment' %>
-  <h1>Assign Roles to players</h1>
+  <h1>Assign Roles to <%= @game.players.count %> players</h1>
   <% @game.players.each do |player| %>
   <%= render 'game/assign', player: player, roles: @roles %>
   <% end %>

@@ -2,6 +2,8 @@
 <h1>Waiting on players</h1>
 <% elsif @game.phase == 'assignment' %>
 <h1>Waiting on role</h1>
+<% elsif @game.phase == 'active' %>
+<h1>Game active with <%= @game.players.count %> players.</h1>
 <% end %>
 <h2><%= @game.full_edition %></h2>
 <% if @game.phase == 'active' %>
