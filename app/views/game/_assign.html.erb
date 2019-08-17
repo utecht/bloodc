@@ -9,4 +9,7 @@
   <%= f.collection_select :role_id, roles, :id, :name, {:selected => if player.role.nil? then nil else player.role.id end, :include_blank => true }%>
   <%= f.submit "Save" %>
 <% end %>
+<% if player.willing_demon %>
+<span>[demon]</span>
+<% end %>
 </div>
